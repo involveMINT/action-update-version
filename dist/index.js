@@ -1611,7 +1611,7 @@ const run = () => __awaiter(void 0, void 0, void 0, function* () {
     yield exec.exec('git', ['config', '--global', 'user.name', author]);
     yield exec.exec('git', ['config', '--global', 'user.email', email]);
     yield exec.exec('git', ['commit', '-am', message.replace('%version%', version)]);
-    yield exec.exec('git', ['push', '-u', 'origin', `HEAD:${branch}`]);
+    yield exec.exec('git', ['push', '-u', 'origin', `HEAD:${branch}`, '-f']);
 });
 run()
     .then(() => core.info('Updated files version successfully'))
