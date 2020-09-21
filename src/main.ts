@@ -105,7 +105,7 @@ const run = async () => {
   await exec.exec('git', ['config', '--global', 'user.name', author]);
   await exec.exec('git', ['config', '--global', 'user.email', email]);
   await exec.exec('git', ['commit', '-am', message.replace('%version%', version)]);
-  await exec.exec('git', ['push', '-u', 'origin', `HEAD:${branch}`]);
+  await exec.exec('git', ['push', '-u', 'origin', `HEAD:${branch}`, '-f']);
 };
 
 run()
